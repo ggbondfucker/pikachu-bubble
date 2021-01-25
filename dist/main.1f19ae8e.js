@@ -120,13 +120,23 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"main.js":[function(require,module,exports) {
 mouth = document.querySelector(".mouth");
 audio = document.querySelector("audio");
+style = document.querySelector("style");
 body = document.body;
 
 mouth.onclick = function () {
+  var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+  var x = Math.random();
+  var y = Math.random(); // let maxX=parseInt(body.clientHeight) * x *plusOrMinus
+  // let maxY=parseInt(body.clientWidth) * y *plusOrMinus
+
+  var maxX = 1000 * x * plusOrMinus;
+  var maxY = 1000 * y * plusOrMinus;
+  console.log(maxX, maxY);
   audio.play();
   var span = document.createElement('span');
   mouth.appendChild(span);
   span.classList.add('bubble');
+  style.innerHTML = "\n    @keyframes move{\n        0% {\n        }\n        100%{\n            transform: translateX(".concat(maxX, "px);\n            transform: translateY(").concat(maxY, "px);\n            height: 100px;\n            width: 100px;\n            opacity: 0.8;\n        }\n        100%{\n            transform: translateX(").concat(maxX, "px);\n            transform: translateY(").concat(maxY, "px);\n            height: 20px;\n            width: 20px;\n            opacity: 0;\n        }\n}");
 };
 },{}],"../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -156,7 +166,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63771" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50075" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
