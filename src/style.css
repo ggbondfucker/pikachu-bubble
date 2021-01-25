@@ -197,7 +197,7 @@ body{
     height: 200px;
     border-radius: 50%;
     background-color: white;
-    animation:move 2s ease-in-out forwards;
+    animation:move 2s linear forwards;
     z-index: 50;
     opacity: 0.8;
 }

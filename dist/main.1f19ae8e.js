@@ -129,14 +129,17 @@ mouth.onclick = function () {
   var y = Math.random(); // let maxX=parseInt(body.clientHeight) * x *plusOrMinus
   // let maxY=parseInt(body.clientWidth) * y *plusOrMinus
 
-  var maxX = 1000 * x * plusOrMinus;
-  var maxY = 1000 * y * plusOrMinus;
-  console.log(maxX, maxY);
+  var maxX1 = 100 * x * plusOrMinus;
+  var maxY1 = 100 * y * plusOrMinus;
+  var maxX2 = 500 * x * plusOrMinus;
+  var maxY2 = 500 * y * plusOrMinus;
+  var maxX3 = 1000 * x * plusOrMinus;
+  var maxY3 = 1000 * y * plusOrMinus;
   audio.play();
   var span = document.createElement('span');
   mouth.appendChild(span);
   span.classList.add('bubble');
-  style.innerHTML = "\n    @keyframes move{\n        0% {\n        }\n        100%{\n            transform: translateX(".concat(maxX, "px);\n            transform: translateY(").concat(maxY, "px);\n            height: 100px;\n            width: 100px;\n            opacity: 0.8;\n        }\n        100%{\n            transform: translateX(").concat(maxX, "px);\n            transform: translateY(").concat(maxY, "px);\n            height: 20px;\n            width: 20px;\n            opacity: 0;\n        }\n}");
+  style.innerHTML = "\n    @keyframes move{\n        0% {\n        }\n        25%{\n            transform: translateX(".concat(maxX1, "px);\n            transform: translateY(").concat(maxY1, "px);\n            height: 100px;\n            width: 100px;\n            opacity: 0.8;\n        }\n        50%{\n            transform: translateX(").concat(maxX2, "px);\n            height: 100px;\n            width: 100px;\n            opacity: 0.5;\n        }\n        755{\n            transform: translateY(").concat(maxY2, "px);\n            height: 100px;\n            width: 100px;\n            opacity: 0.4;\n        \n        }\n        100%{\n            transform: translateX(").concat(maxX3, "px);\n            transform: translateY(").concat(maxY3, "px);\n            height: 20px;\n            width: 20px;\n            opacity: 0;\n        }\n}");
 };
 },{}],"../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
